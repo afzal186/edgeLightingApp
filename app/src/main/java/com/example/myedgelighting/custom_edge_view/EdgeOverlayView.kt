@@ -345,7 +345,6 @@ class EdgeOverlayView(context: Context, attrs: AttributeSet?) : View(context, at
                     MySharedPrefs(context).getFloatPref(CommonKeys.Corner_Radius, 20f),
                     paint
                 )
-
                 // Update the hue for the next frame
                 currentHue += 0.5f // Adjust the hue change rate as needed
                 if (currentHue > 360f) {
