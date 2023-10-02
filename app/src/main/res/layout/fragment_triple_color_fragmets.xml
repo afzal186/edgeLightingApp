@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    tools:context=".ui.fragments.SingleColorFragment">
+
+
+    <ImageView
+        android:id="@+id/ibGradient1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/triplecolor1"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/ibGradient6"
+        app:layout_constraintEnd_toStartOf="@+id/ibGradient2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/ibGradient2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/triplecolor2"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/ibGradient7"
+        app:layout_constraintEnd_toStartOf="@+id/ibGradient3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibGradient1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/ibGradient3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/triplecolor3"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/ibGradient8"
+        app:layout_constraintEnd_toStartOf="@+id/ibGradient4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibGradient2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/ibGradient4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/triplecolor4"
+        android:padding="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/ibGradient5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibGradient3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ibGradient5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/triplecolor5"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibGradient4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ibGradient6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/triplecolor6"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/ibGradient2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibGradient1" />
+
+    <ImageView
+        android:id="@+id/ibGradient7"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/triplecolor7"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/ibGradient3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibGradient1"
+        app:layout_constraintTop_toBottomOf="@+id/ibGradient2" />
+
+    <ImageView
+        android:id="@+id/ibGradient8"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/triplecolor8"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibGradient7"
+        app:layout_constraintEnd_toStartOf="@+id/ibGradient4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibGradient2"
+        app:layout_constraintTop_toBottomOf="@+id/ibGradient3"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/ibGradient9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/triplecolor9"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/ibGradient5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibGradient3"
+        app:layout_constraintTop_toBottomOf="@+id/ibGradient4" />
+
+    <ImageView
+        android:id="@+id/ibGradient10"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/triplecolor10"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibGradient4"
+        app:layout_constraintTop_toBottomOf="@+id/ibGradient5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

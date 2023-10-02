@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    tools:context=".ui.activity.dashboard.DashboardActivity">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!-- Wrap all the child views inside a LinearLayout -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvEdgelighting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/edge_lighting"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="@id/tvEdgelighting"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvEdgelighting"
+                    app:layout_constraintTop_toTopOf="@+id/tvEdgelighting" />
+
+                <TextView
+                    android:id="@+id/tvEnableEdge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:text="Enable Edge Lighting"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEdgelighting" />
+
+                <Switch
+                    android:id="@+id/swEnableService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/thumb"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEnableEdge"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/ivMore"
+                    app:layout_constraintTop_toTopOf="@+id/tvEnableEdge"
+                    android:track="@drawable/track"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clChooseColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/colors_bg"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvEnableEdge">
+
+                <TextView
+                    android:id="@+id/tvChooseColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/choose_color"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioGroupColorOptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvChooseColor">
+
+                    <RadioButton
+                        android:id="@+id/rbSingleColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/_1_color"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+
+                        />
+
+
+                    <RadioButton
+                        android:id="@+id/rbDoubleColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/_2_colors"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+
+                    <RadioButton
+                        android:id="@+id/rbTripleColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/_3_colors"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+
+                </RadioGroup>
+
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vpColors"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintTop_toBottomOf="@id/radioGroupColorOptions"
+                    tools:layout_editor_absoluteX="10dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBorderStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/colors_bg"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/clChooseColor">
+
+                <TextView
+                    android:id="@+id/tvSelectBorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:text="@string/select_border_style"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Switch
+                    android:id="@+id/borderStyleSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:thumb="@drawable/thumb"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvSelectBorder"
+                    app:layout_constraintEnd_toEndOf="@+id/vpBorderSelction"
+                    app:layout_constraintTop_toTopOf="@+id/tvSelectBorder"
+                    android:track="@drawable/track"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioGroupBorderStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSelectBorder">
+
+                    <RadioButton
+                        android:id="@+id/rbEmojis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/emoji"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+
+                        />
+
+
+                    <RadioButton
+                        android:id="@+id/rbCharacters"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/characters"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+
+                    <RadioButton
+                        android:id="@+id/rbAlphabets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alphabets"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+
+                </RadioGroup>
+
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vpBorderSelction"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroupBorderStyle" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSliders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/colors_bg"
+                android:padding="10dp"
+                app:layout_constraintBottom_toTopOf="@id/clNotchStyle"
+                app:layout_constraintTop_toBottomOf="@+id/clBorderStyle"
+                app:layout_constraintVertical_bias="0.5">
+
+                <TextView
+                    android:id="@+id/tvAnimSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/animation_speed"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/sbAnimationSpeed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <SeekBar
+                    android:id="@+id/sbAnimationSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="50"
+                    android:progressDrawable="@drawable/custom_seekbar"
+                    android:thumb="@drawable/thumb_seekbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAnimSpeed"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvBorderSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:text="@string/border_size"
+                    android:textColor="@color/white"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/sbBorderSize"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sbAnimationSpeed"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <SeekBar
+                    android:id="@+id/sbBorderSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progressDrawable="@drawable/custom_seekbar"
+                    android:thumb="@drawable/thumb_seekbar"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/tvRadius"
+                    app:layout_constraintEnd_toEndOf="@+id/sbAnimationSpeed"
+                    app:layout_constraintStart_toStartOf="@+id/sbAnimationSpeed"
+
+                    app:layout_constraintTop_toBottomOf="@+id/tvBorderSize"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <TextView
+                    android:id="@+id/tvRadius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/set_corner_radius"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/sbSetRadius"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sbBorderSize"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <SeekBar
+                    android:id="@+id/sbSetRadius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progressDrawable="@drawable/custom_seekbar"
+                    android:thumb="@drawable/thumb_seekbar"
+                    app:layout_constraintBottom_toTopOf="@+id/tvStroke"
+                    app:layout_constraintEnd_toEndOf="@+id/sbAnimationSpeed"
+                    app:layout_constraintStart_toStartOf="@+id/tvRadius"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRadius"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <TextView
+                    android:id="@+id/tvStroke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/set_stroke_size"
+                    android:textColor="@color/white"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/sbStrokeWidth"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sbSetRadius"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <SeekBar
+                    android:id="@+id/sbStrokeWidth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:max="100"
+                    android:progressDrawable="@drawable/custom_seekbar"
+                    android:thumb="@drawable/thumb_seekbar"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvStroke"
+                    app:layout_constraintVertical_bias="0.5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLightingStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/colors_bg"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/clChooseColor">
+
+                <TextView
+                    android:id="@+id/tvLightingStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="@string/lighting_style"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/LightingStyleSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/thumb"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLightingStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvLightingStyle"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/track"
+                    app:trackTint="@color/switchBg" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioLightingStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLightingStyle">
+
+                    <RadioButton
+                        android:id="@+id/rbTTB"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:text="@string/top_to_bottom"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+
+                    <RadioButton
+                        android:id="@+id/rbReverse"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="@string/reverse"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+
+                    <RadioButton
+                        android:id="@+id/rbHalfBorder"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/half_border"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+
+                </RadioGroup>
+
+
+                <RadioButton
+                    android:id="@+id/rbFullBorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_border"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/radioLightingStyle"
+                    app:layout_constraintTop_toBottomOf="@+id/radioLightingStyle" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clNotchStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/colors_bg"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clChooseColor"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tvNotchStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="@string/enable_notch_display"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/enableNotchSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/thumb"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvNotchStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvNotchStyle"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/track"
+                    app:trackTint="@color/switchBg" />
+
+
+                <ImageView
+                    android:id="@+id/ivFullScreen"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:background="@drawable/notch_1"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toStartOf="@id/ivNotch1"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvNotchStyle" />
+
+                <ImageView
+                    android:id="@+id/ivFullScreenSelection"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/ic_selected"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="@id/ivFullScreen"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintTop_toTopOf="@id/ivFullScreen" />
+
+                <ImageView
+                    android:id="@+id/ivNotch1"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:background="@drawable/notch_2"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toStartOf="@+id/ivNotch2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/ivFullScreen"
+                    app:layout_constraintTop_toTopOf="@+id/ivFullScreen" />
+
+                <ImageView
+                    android:id="@+id/ivNotch1Selection"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/ic_selected"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="@id/ivNotch1"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintTop_toTopOf="@id/ivNotch1" />
+
+                <ImageView
+                    android:id="@+id/ivNotch2"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:background="@drawable/notch_4"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivNotch1" />
+
+                <ImageView
+                    android:id="@+id/ivNotch3"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/notch_4"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/ivFullScreen"
+                    app:layout_constraintStart_toStartOf="@+id/ivFullScreen"
+                    app:layout_constraintTop_toBottomOf="@id/ivFullScreen" />
+
+
+                <ImageView
+                    android:id="@+id/ivNotch4"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/notch_5"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/ivNotch1"
+                    app:layout_constraintStart_toStartOf="@+id/ivNotch1"
+                    app:layout_constraintTop_toBottomOf="@id/ivNotch1" />
+
+                <ImageView
+                    android:id="@+id/ivNotch5"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/notch_6"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/ivNotch2"
+                    app:layout_constraintStart_toStartOf="@+id/ivNotch2"
+                    app:layout_constraintTop_toBottomOf="@id/ivNotch2" />
+
+                <View
+                    android:id="@+id/separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/separatorColor"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/ivNotch4"
+
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clNotchSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/separator">
+
+                    <TextView
+                        android:id="@+id/tvNotchSetting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/notch_settings"
+                        android:paddingStart="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvNotchX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:padding="10dp"
+                        android:text="Notch X"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="@id/tvNotchSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNotchSetting" />
+
+                    <SeekBar
+                        android:id="@+id/sbNotchX"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:min="0"
+                        android:progressDrawable="@drawable/custom_seekbar"
+                        android:thumb="@drawable/thumb_seekbar"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvNotchX"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvNotchY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:padding="10dp"
+                        android:text="Notch Y"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="@id/tvNotchSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/sbNotchX" />
+
+                    <SeekBar
+                        android:id="@+id/sbNotchY"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:min="0"
+                        android:progressDrawable="@drawable/custom_seekbar"
+                        android:thumb="@drawable/thumb_seekbar"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvNotchY"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvNotchWidth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:padding="10dp"
+                        android:text="@string/notch_width"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="@id/tvNotchSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/sbNotchY" />
+
+                    <SeekBar
+                        android:id="@+id/sbNotchWidth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:min="0"
+                        android:progressDrawable="@drawable/custom_seekbar"
+                        android:thumb="@drawable/thumb_seekbar"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvNotchWidth"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvNotchHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:padding="10dp"
+                        android:text="@string/notch_height"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="@id/tvNotchSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/sbNotchWidth" />
+
+                    <SeekBar
+                        android:id="@+id/sbNotchHeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="150"
+                        android:min="0"
+                        android:progressDrawable="@drawable/custom_seekbar"
+                        android:thumb="@drawable/thumb_seekbar"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvNotchHeight"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvNotchRadius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:padding="10dp"
+                        android:text="@string/notch_top_radius"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="@id/tvNotchSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/sbNotchHeight" />
+
+                    <SeekBar
+                        android:id="@+id/sbNotchRadius"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="150"
+                        android:min="0"
+                        android:layout_marginBottom="20dp"
+                        android:progressDrawable="@drawable/custom_seekbar"
+                        android:thumb="@drawable/thumb_seekbar"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvNotchRadius"
+                        app:layout_constraintBottom_toBottomOf="parent"
+
+
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

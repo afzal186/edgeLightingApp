@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">Edge Lights</string>
+    <string name="incoming_call">Incoming call</string>
+    <string name="incoming_sms">Incoming Sms</string>
+    <string name="selected_app">Selected App</string>
+    <string name="_0">0</string>
+    <string name="_5s">5s</string>
+    <string name="notification_duration">Notification Duration</string>
+    <string name="always_display_over_other_apps">Always Display Over Other Apps</string>
+    <string name="show_on_notification">Show on Notification</string>
+    <string name="show_when_charging">Show When Charging</string>
+    <string name="edge_lighting">Edge Lighting</string>
+    <string name="tap_to_setting">Tap to Setting</string>
+    <string name="edge_lightings">Edge Lighting</string>
+    <string name="disable_when_battery_below">Disable when battery below</string>
+    <string name="battery_percentage">Battery Percentage</string>
+    <string name="dnd_start">DND Start</string>
+    <string name="_00_00">00:00</string>
+    <string name="choose_color">Select Color</string>
+    <string name="_2_colors">2-Colors</string>
+    <string name="_3_colors">3-Colors</string>
+    <string name="staric">*</string>
+    <string name="hash">#</string>
+    <string name="dollar">$</string>
+    <string name="heart">♡</string>
+    <string name="minus">—</string>
+    <string name="plus">+</string>
+    <string name="moon">☪\n</string>
+    <string name="triangle">△</string>
+    <string name="umrella">☂\n</string>
+    <string name="square">◲</string>
+    <string name="Weather">🌥</string>
+    <string name="Default">Default</string>
+    <string name="emoji">Emoji</string>
+    <string name="halloween">Halloween</string>
+    <string name="hero">Hero</string>
+    <string name="love">Love</string>
+    <string name="sticker">Sticker</string>
+    <string name="Wave">💧</string>
+    <string name="Flower">❆</string>
+    <string name="animation_speed">Animation Speed</string>
+    <string name="border_size">Symbol Size</string>
+    <string name="set_corner_radius">Set Corner Radius</string>
+    <string name="set_stoke_width">Set Stoke Width</string>
+    <string name="set_stroke_size">Set Stroke Size</string>
+    <string name="start">Start</string>
+    <string name="select_border_style">Select Border Style</string>
+    <string name="emojis">Emojis</string>
+    <string name="characters">Characters</string>
+    <string name="alphabets">Alphabets</string>
+    <string-array name="color_options">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Yellow</item>
+    </string-array>
+    <string-array name="duration_options">
+        <item>Short</item>
+        <item>Medium</item>
+        <item>Long</item>
+        <item>Custom</item>
+    </string-array>
+
+
+    <string-array name="time_options">
+        <item>10 seconds</item>
+        <item>20 seconds</item>
+        <item>30 seconds</item>
+        <item>40 seconds</item>
+    </string-array>
+
+    <string-array name="option_colors">
+        <item>Single</item>
+        <item>2 Colors</item>
+        <item>3 Colors</item>
+        <item>Custom</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="top_to_bottom">Top to Bottom</string>
+    <string name="reverse">Reverse</string>
+    <string name="half_border">Half Border</string>
+    <string name="full_border">Full Border</string>
+    <string name="_1_color">1-Color</string>
+    <string name="enable_notch_display">Notch Display</string>
+    <string name="notch_settings">Notch Settings</string>
+    <string name="notch_width">Notch Width</string>
+    <string name="notch_height">Notch Height</string>
+    <string name="rate">Rate</string>
+    <string name="share">Share</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="notch_top_radius">Notch Top Radius</string>
+    <string name="lighting_style">Lighting Style</string>
+
+</resources>
+

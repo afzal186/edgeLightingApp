@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyEdgeLighting" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
+    </style>
+
+    <style name="Theme.MyEdgeLighting" parent="Base.Theme.MyEdgeLighting">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <!--        <item name="android:windowLightStatusBar">false</item>-->
+        <!--        <item name="android:statusBarColor">@color/dashboardBg</item>-->
+        <!--        <item name="android:navigationBarColor">@color/dashboardBg</item>-->
+        <!--        <item name="android:statusBarColor">-->
+        <!--            @android:color/transparent-->
+        <!--        </item>-->
+        <!--        <item name="android:windowLightStatusBar">-->
+        <!--            true-->
+        <!--        </item>-->
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+
+
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MyEdgeLighting">
+        <item name="android:windowBackground">@drawable/cold_start_theme</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+    <!--    <color name="statusBar">@android:color/transparent</color>-->
+    <!--    <color name="navigationBar">@android:color/transparent</color>-->
+</resources>
